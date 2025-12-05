@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getOrders, updateOrderStatus, deleteOrder, getProducts, addProduct, updateProduct, deleteProduct } from '../utils/storage';
 import type { Order, Product } from '../utils/storage';
 
-export default function StaffDashboard({ onLogout }: { onLogout: () => void }) {
+export default function StaffDashboard() {
     const [orders, setOrders] = useState<Order[]>([]);
     const [products, setProducts] = useState<Product[]>([]);
     const [activeTab, setActiveTab] = useState<'orders' | 'products'>('orders');
@@ -14,6 +14,12 @@ export default function StaffDashboard({ onLogout }: { onLogout: () => void }) {
         price: 0,
         description: ''
     });
+
+    const handleLogout = () => {
+        const { logoutStaff } = require('../utils/storage');
+        logoutStaff();
+        window.location.href = '/staff/login';
+    };
 
     useEffect(() => {
         loadData();
