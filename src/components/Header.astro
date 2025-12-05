@@ -1,25 +1,22 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
+    { linkText: 'Order', href: '/order' },
+    { linkText: 'Staff Login', href: '/staff/login' }
 ];
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
-        <Logo />
-    </a>
+<nav class="flex flex-wrap items-center justify-between gap-4 pt-6 pb-12 sm:pt-8 sm:pb-16 border-b border-dark-border">
+    <div class="flex items-center gap-2">
+        <div class="text-2xl sm:text-3xl font-bold text-primary">✨</div>
+        <h1 class="text-xl sm:text-2xl font-bold text-white">Flower Lighting</h1>
+    </div>
     {
-        !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1">
+        navItems && (
+            <ul class="flex flex-wrap gap-x-6 gap-y-2">
                 {navItems.map((item) => (
                     <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
+                        <a href={item.href} class="text-white hover:text-primary transition-colors font-medium text-sm sm:text-base">
                             {item.linkText}
                         </a>
                     </li>
