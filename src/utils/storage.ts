@@ -278,3 +278,46 @@ export function getStaffSession(): { email: string; loggedInAt: string } | null 
     const session = localStorage.getItem(STAFF_SESSION_KEY);
     return session ? JSON.parse(session) : null;
 }
+
+// Staff Members Management
+export function getStaffMembers(): StaffMember[] {
+    if (typeof localStorage === 'undefined') return [];
+    const stored = localStorage.getItem(STAFF_MEMBERS_KEY);
+    return stored ? JSON.parse(stored) : initializeStaffMembers();
+}
+
+export function addStaffMember(member: Omit<StaffMember, 'id'>): StaffMember {
+    if (typeof localStorage === 'undefined') throw new Error('localStorage not available');
+
+    const members = getStaffMembers();
+    const newMember: StaffMember = {
+        ...member,
+        id: Math.max(...members.map((m) => m.id), 0) + 1
+    };
+    members.push(newMember);
+    localStorage.setItem(STAFF_MEMBERS_KEY, JSON.stringify(members));
+    return newMember;
+}
+
+export function updateStaffMember(id: number, updates: Partial<StaffMember>): StaffMember {
+    if (typeof localStorage === 'undefined') throw new Error('localStorage not available');
+
+    const members = getStaffMembers();
+    const index = members.findIndex((m) => m.id === id);
+    if (index === -1) throw new Error('Staff member not found');
+
+    members[index] = { ...members[index], ...updates };
+    localStorage.setItem(STAFF_MEMBERS_KEY, JSON.stringify(members));
+    return members[index];
+}
+
+export function deleteStaffMember(id: number): void {
+    if (typeof localStorage === 'undefined') throw new Error('localStorage not available');
+
+    const members = getStaffMembers().filter((m) => m.id !== id);
+    localStorage.setItem(STAFF_MEMBERS_KEY, JSON.stringify(members));
+}
+
+export function getStaffMemberById(id: number): StaffMember | undefined {
+    return getStaffMembers().find((m) => m.id === id);
+}
