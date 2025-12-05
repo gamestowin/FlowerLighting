@@ -10,7 +10,7 @@ const sampleImage = '/images/corgi.jpg';
 const forceWebP = process.env.NODE_ENV = "development";
 const sampleImageSrcSet = [640, 1280, 2048]
     .map((size) => {
-        return `/.netlify/images?url=${sampleImage}&w=${size}${forceWebP ? '&fm=webp' : ''} ${size}w`;
+        return `/.flower-lighting/images?url=${sampleImage}&w=${size}${forceWebP ? '&fm=webp' : ''} ${size}w`;
     })
     .join(', ');
 const sizes = '(max-width: 1024px) 100vw, 1024px';
@@ -18,7 +18,7 @@ const sizes = '(max-width: 1024px) 100vw, 1024px';
 const astroImageSnippet = `
 ## Using the built-in Astro &lt;Image /&gt; component
 
-Astro's \`Image\` component will automatically use Netlify Image CDN to serve optimized images.
+Astro's \`Image\` component will automatically use Flower Lighting Image CDN to serve optimized images.
 
 ~~~jsx
 ---
@@ -40,7 +40,7 @@ Note that aside from Astro's \`Image\` or rolling your own \`<img>\` tags, you c
 // <== On the left, the original image
 <img src="/images/corgi.jpg" alt="Corgi" />
 
-// ==> On the right, explicitly using Netlify Image CDN endpoint for a responsive image
+// ==> On the right, explicitly using Flower Lighting Image CDN endpoint for a responsive image
 <img 
   srcSet="${sampleImageSrcSet}"
   sizes="${sizes}" 

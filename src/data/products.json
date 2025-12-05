@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Crystal Chandelier",
+        "category": "chandeliers",
+        "price": 2500,
+        "description": "Beautiful crystal chandelier for luxury interiors"
+    },
+    {
+        "id": 2,
+        "name": "LED Ceiling Light",
+        "category": "lights",
+        "price": 450,
+        "description": "Modern LED ceiling light with adjustable brightness"
+    },
+    {
+        "id": 3,
+        "name": "Wall Sconce",
+        "category": "lights",
+        "price": 350,
+        "description": "Elegant wall sconce for bedroom and hallway"
+    },
+    {
+        "id": 4,
+        "name": "Electrical Wire (100m)",
+        "category": "wires",
+        "price": 800,
+        "description": "Premium quality copper wiring cable"
+    },
+    {
+        "id": 5,
+        "name": "Power Adapter",
+        "category": "accessories",
+        "price": 120,
+        "description": "Universal power adapter for various devices"
+    },
+    {
+        "id": 6,
+        "name": "Gold Pendant Light",
+        "category": "chandeliers",
+        "price": 1800,
+        "description": "Stylish gold-finish pendant light fixture"
+    },
+    {
+        "id": 7,
+        "name": "Fiber Optic Cable",
+        "category": "wires",
+        "price": 600,
+        "description": "High-speed fiber optic cable for networks"
+    },
+    {
+        "id": 8,
+        "name": "Light Switch",
+        "category": "accessories",
+        "price": 85,
+        "description": "Modern minimalist light switch"
+    }
+]
