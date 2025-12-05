@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Flower Lighting">
+    <div class="flex flex-col gap-12 pb-16">
+        <section class="text-center pt-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Get in Touch</h1>
+            <p class="text-xl text-gray-300">We're here to help and answer any questions</p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="space-y-6">
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Contact Information</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Location</h3>
+                                <p class="text-gray-300">Malaz, Riyadh</p>
+                                <p class="text-gray-400 text-sm">Saudi Arabia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-3xl">💬</div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">WhatsApp</h3>
+                                <a href="https://wa.me/966501234567" class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+                                    💬 Start Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-3xl">📞</div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Phone</h3>
+                                <a href="tel:+966501234567" class="text-primary hover:text-white transition-colors">+966 50 123 4567</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-3xl">📧</div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Email</h3>
+                                <a href="mailto:info@flowerlighting.com" class="text-primary hover:text-white transition-colors">info@flowerlighting.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-3xl">🕐</div>
+                            <div>
+                                <h3 class="font-bold text-white mb-2">Working Hours</h3>
+                                <div class="text-gray-300 text-sm space-y-1">
+                                    <p><strong>Saturday - Thursday:</strong> 8:00 AM - 10:00 PM</p>
+                                    <p><strong>Friday:</strong> 2:00 PM - 10:00 PM</p>
+                                    <p><strong>Lunch Break:</strong> 12:00 PM - 4:00 PM (Daily)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Why Choose Us</h2>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex gap-3">
+                            <span class="text-primary flex-shrink-0">✓</span>
+                            <span>Premium quality lighting products</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary flex-shrink-0">✓</span>
+                            <span>Fast and reliable delivery</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary flex-shrink-0">✓</span>
+                            <span>Competitive wholesale prices</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary flex-shrink-0">✓</span>
+                            <span>Expert customer support</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary flex-shrink-0">✓</span>
+                            <span>Wide range of products</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-dark-card border border-dark-border rounded-lg overflow-hidden">
+                    <div class="aspect-square bg-dark-bg flex items-center justify-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.4820634949673!2d46.57970312345679!3d24.82039587131969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1d8c8c8c8c8d%3A0x1234567890abcdef!2sMalaz%2C%20Riyadh!5e0!3m2!1sen!2ssa!4v1234567890"
+                            width="100%"
+                            height="400"
+                            style="border: 0; border-radius: 8px;"
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card border border-dark-border rounded-lg p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Name</label>
+                            <input
+                                type="text"
+                                placeholder="Your name"
+                                class="w-full px-4 py-3 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Email</label>
+                            <input
+                                type="email"
+                                placeholder="Your email"
+                                class="w-full px-4 py-3 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-white font-semibold mb-2">Message</label>
+                            <textarea
+                                placeholder="Your message"
+                                rows={4}
+                                class="w-full px-4 py-3 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors resize-none"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full px-6 py-3 bg-primary text-dark-bg font-bold rounded-lg hover:opacity-90 transition-opacity"
+                        >
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-gradient-to-r from-dark-card to-dark-border border border-dark-border rounded-lg p-8">
+            <div class="text-center">
+                <div class="text-4xl mb-3">🚀</div>
+                <h3 class="font-bold text-white mb-2">Fast Service</h3>
+                <p class="text-gray-400 text-sm">Same-day processing for orders before 2 PM</p>
+            </div>
+
+            <div class="text-center">
+                <div class="text-4xl mb-3">✓</div>
+                <h3 class="font-bold text-white mb-2">Quality Assured</h3>
+                <p class="text-gray-400 text-sm">All products inspected and verified</p>
+            </div>
+
+            <div class="text-center">
+                <div class="text-4xl mb-3">💰</div>
+                <h3 class="font-bold text-white mb-2">Best Prices</h3>
+                <p class="text-gray-400 text-sm">Wholesale rates for all buyers</p>
+            </div>
+        </div>
+    </div>
+</Layout>
