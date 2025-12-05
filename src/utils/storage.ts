@@ -114,6 +114,55 @@ function initializeProducts(): Product[] {
     return JSON.parse(stored);
 }
 
+// Initialize with default staff members
+function initializeStaffMembers(): StaffMember[] {
+    if (typeof localStorage === 'undefined') return [];
+
+    const stored = localStorage.getItem(STAFF_MEMBERS_KEY);
+    if (!stored) {
+        const defaultStaff: StaffMember[] = [
+            {
+                id: 1,
+                name: 'Ahmed Al-Mansouri',
+                jobRole: 'Sales Manager',
+                phone: '+966 55 1234 567',
+                workStatus: 'active'
+            },
+            {
+                id: 2,
+                name: 'Fatima Al-Rashid',
+                jobRole: 'Product Specialist',
+                phone: '+966 55 2345 678',
+                workStatus: 'active'
+            },
+            {
+                id: 3,
+                name: 'Mohammed Al-Dosari',
+                jobRole: 'Warehouse Manager',
+                phone: '+966 55 3456 789',
+                workStatus: 'active'
+            },
+            {
+                id: 4,
+                name: 'Noor Al-Shammari',
+                jobRole: 'Customer Service',
+                phone: '+966 55 4567 890',
+                workStatus: 'on_leave'
+            },
+            {
+                id: 5,
+                name: 'Tariq Al-Otaibi',
+                jobRole: 'Logistics Officer',
+                phone: '+966 55 5678 901',
+                workStatus: 'active'
+            }
+        ];
+        localStorage.setItem(STAFF_MEMBERS_KEY, JSON.stringify(defaultStaff));
+        return defaultStaff;
+    }
+    return JSON.parse(stored);
+}
+
 // Product Management
 export function getProducts(): Product[] {
     if (typeof localStorage === 'undefined') return [];
