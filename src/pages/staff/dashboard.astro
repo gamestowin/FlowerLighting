@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StaffDashboard from '../../components/StaffDashboard';
+---
+
+<Layout title="Staff Dashboard - Flower Lighting">
+    <StaffDashboard client:load />
+</Layout>
+
+<script>
+    // Check if staff is logged in
+    if (typeof window !== 'undefined') {
+        const session = localStorage.getItem('flower_lighting_staff_session');
+        if (!session) {
+            window.location.href = '/staff/login';
+        }
+    }
+</script>
