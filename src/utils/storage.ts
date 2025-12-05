@@ -42,6 +42,7 @@ const DEFAULT_STAFF = {
 const ORDERS_KEY = 'flower_lighting_orders';
 const PRODUCTS_KEY = 'flower_lighting_products';
 const STAFF_SESSION_KEY = 'flower_lighting_staff_session';
+const STAFF_MEMBERS_KEY = 'flower_lighting_staff_members';
 
 // Initialize with default products
 function initializeProducts(): Product[] {
