@@ -19,10 +19,10 @@ export default function Dashboard() {
     }, []);
 
     const totalOrders = orders.length;
-    const pendingOrders = orders.filter(o => o.status === 'pending').length;
-    const completedOrders = orders.filter(o => o.status === 'completed').length;
+    const pendingOrders = orders.filter((o) => o.status === 'pending').length;
+    const completedOrders = orders.filter((o) => o.status === 'completed').length;
     const totalStaff = staff.length;
-    const activeStaff = staff.filter(s => s.workStatus === 'active').length;
+    const activeStaff = staff.filter((s) => s.workStatus === 'active').length;
 
     // Calculate orders per day for the last 7 days
     const getOrdersPerDay = () => {
@@ -84,9 +84,7 @@ export default function Dashboard() {
                                         className="h-full bg-gradient-to-r from-primary to-primary/70 flex items-center justify-end pr-3 transition-all"
                                         style={{ width: `${percentage}%` }}
                                     >
-                                        {percentage > 20 && (
-                                            <span className="text-xs font-bold text-dark-bg">{counts[idx]}</span>
-                                        )}
+                                        {percentage > 20 && <span className="text-xs font-bold text-dark-bg">{counts[idx]}</span>}
                                     </div>
                                 </div>
                                 <div className="w-12 text-right text-sm text-gray-400">{counts[idx]}</div>
@@ -107,9 +105,7 @@ export default function Dashboard() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <span className="text-lg font-bold text-white">{pendingOrders}</span>
-                                <span className="text-xs text-gray-500">
-                                    {totalOrders > 0 ? Math.round((pendingOrders / totalOrders) * 100) : 0}%
-                                </span>
+                                <span className="text-xs text-gray-500">{totalOrders > 0 ? Math.round((pendingOrders / totalOrders) * 100) : 0}%</span>
                             </div>
                         </div>
 
@@ -119,11 +115,9 @@ export default function Dashboard() {
                                 <span className="text-gray-300">Processing</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <span className="text-lg font-bold text-white">
-                                    {orders.filter(o => o.status === 'processing').length}
-                                </span>
+                                <span className="text-lg font-bold text-white">{orders.filter((o) => o.status === 'processing').length}</span>
                                 <span className="text-xs text-gray-500">
-                                    {totalOrders > 0 ? Math.round((orders.filter(o => o.status === 'processing').length / totalOrders) * 100) : 0}%
+                                    {totalOrders > 0 ? Math.round((orders.filter((o) => o.status === 'processing').length / totalOrders) * 100) : 0}%
                                 </span>
                             </div>
                         </div>
@@ -135,9 +129,7 @@ export default function Dashboard() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <span className="text-lg font-bold text-white">{completedOrders}</span>
-                                <span className="text-xs text-gray-500">
-                                    {totalOrders > 0 ? Math.round((completedOrders / totalOrders) * 100) : 0}%
-                                </span>
+                                <span className="text-xs text-gray-500">{totalOrders > 0 ? Math.round((completedOrders / totalOrders) * 100) : 0}%</span>
                             </div>
                         </div>
                     </div>
@@ -153,9 +145,7 @@ export default function Dashboard() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <span className="text-lg font-bold text-white">{activeStaff}</span>
-                                <span className="text-xs text-gray-500">
-                                    {totalStaff > 0 ? Math.round((activeStaff / totalStaff) * 100) : 0}%
-                                </span>
+                                <span className="text-xs text-gray-500">{totalStaff > 0 ? Math.round((activeStaff / totalStaff) * 100) : 0}%</span>
                             </div>
                         </div>
 
@@ -165,11 +155,9 @@ export default function Dashboard() {
                                 <span className="text-gray-300">On Leave</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <span className="text-lg font-bold text-white">
-                                    {staff.filter(s => s.workStatus === 'on_leave').length}
-                                </span>
+                                <span className="text-lg font-bold text-white">{staff.filter((s) => s.workStatus === 'on_leave').length}</span>
                                 <span className="text-xs text-gray-500">
-                                    {totalStaff > 0 ? Math.round((staff.filter(s => s.workStatus === 'on_leave').length / totalStaff) * 100) : 0}%
+                                    {totalStaff > 0 ? Math.round((staff.filter((s) => s.workStatus === 'on_leave').length / totalStaff) * 100) : 0}%
                                 </span>
                             </div>
                         </div>
@@ -180,11 +168,9 @@ export default function Dashboard() {
                                 <span className="text-gray-300">Inactive</span>
                             </div>
                             <div className="flex items-center gap-3">
-                                <span className="text-lg font-bold text-white">
-                                    {staff.filter(s => s.workStatus === 'inactive').length}
-                                </span>
+                                <span className="text-lg font-bold text-white">{staff.filter((s) => s.workStatus === 'inactive').length}</span>
                                 <span className="text-xs text-gray-500">
-                                    {totalStaff > 0 ? Math.round((staff.filter(s => s.workStatus === 'inactive').length / totalStaff) * 100) : 0}%
+                                    {totalStaff > 0 ? Math.round((staff.filter((s) => s.workStatus === 'inactive').length / totalStaff) * 100) : 0}%
                                 </span>
                             </div>
                         </div>
@@ -195,19 +181,13 @@ export default function Dashboard() {
             <section>
                 <h2 className="text-2xl font-bold text-white mb-6">Quick Navigation</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <a
-                        href="/order"
-                        className="bg-dark-card border border-dark-border hover:border-primary rounded-lg p-6 text-center transition-colors group"
-                    >
+                    <a href="/order" className="bg-dark-card border border-dark-border hover:border-primary rounded-lg p-6 text-center transition-colors group">
                         <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">📝</div>
                         <h3 className="font-bold text-white mb-1">New Order</h3>
                         <p className="text-xs text-gray-400">Create a new order</p>
                     </a>
 
-                    <a
-                        href="/staff"
-                        className="bg-dark-card border border-dark-border hover:border-primary rounded-lg p-6 text-center transition-colors group"
-                    >
+                    <a href="/staff" className="bg-dark-card border border-dark-border hover:border-primary rounded-lg p-6 text-center transition-colors group">
                         <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">👥</div>
                         <h3 className="font-bold text-white mb-1">Staff</h3>
                         <p className="text-xs text-gray-400">Manage staff members</p>

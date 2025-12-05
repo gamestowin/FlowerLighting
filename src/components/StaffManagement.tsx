@@ -166,9 +166,7 @@ export default function StaffManagement() {
                 <button
                     onClick={() => (showForm ? handleCancel() : handleAddClick())}
                     className={`px-6 py-3 font-bold rounded-lg transition-colors ${
-                        showForm
-                            ? 'bg-red-900 text-red-200 hover:bg-red-800'
-                            : 'bg-primary text-dark-bg hover:opacity-90'
+                        showForm ? 'bg-red-900 text-red-200 hover:bg-red-800' : 'bg-primary text-dark-bg hover:opacity-90'
                     }`}
                 >
                     {showForm ? '✕ Cancel' : '+ Add Staff Member'}
@@ -177,9 +175,7 @@ export default function StaffManagement() {
 
             {showForm && (
                 <div className="bg-dark-card border border-dark-border rounded-lg p-8">
-                    <h3 className="text-2xl font-bold text-white mb-6">
-                        {editingStaff ? 'Edit Staff Member' : 'Add New Staff Member'}
-                    </h3>
+                    <h3 className="text-2xl font-bold text-white mb-6">{editingStaff ? 'Edit Staff Member' : 'Add New Staff Member'}</h3>
 
                     <div className="space-y-4">
                         <div>
@@ -202,8 +198,10 @@ export default function StaffManagement() {
                                     className="w-full px-4 py-3 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
                                 >
                                     <option value="">Select job role</option>
-                                    {JOB_ROLES.map(role => (
-                                        <option key={role} value={role}>{role}</option>
+                                    {JOB_ROLES.map((role) => (
+                                        <option key={role} value={role}>
+                                            {role}
+                                        </option>
                                     ))}
                                 </select>
                             </div>
@@ -227,8 +225,10 @@ export default function StaffManagement() {
                                 onChange={(e) => setFormData({ ...formData, workStatus: e.target.value as 'active' | 'inactive' | 'on_leave' })}
                                 className="w-full px-4 py-3 bg-dark-bg border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
                             >
-                                {WORK_STATUSES.map(status => (
-                                    <option key={status.id} value={status.id}>{status.label}</option>
+                                {WORK_STATUSES.map((status) => (
+                                    <option key={status.id} value={status.id}>
+                                        {status.label}
+                                    </option>
                                 ))}
                             </select>
                         </div>
@@ -279,9 +279,13 @@ export default function StaffManagement() {
                                         </a>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold border ${getStatusColor(member.workStatus)}`}>
+                                        <span
+                                            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-semibold border ${getStatusColor(member.workStatus)}`}
+                                        >
                                             <span>{getStatusIcon(member.workStatus)}</span>
-                                            <span>{member.workStatus === 'on_leave' ? 'On Leave' : member.workStatus === 'active' ? 'Active' : 'Inactive'}</span>
+                                            <span>
+                                                {member.workStatus === 'on_leave' ? 'On Leave' : member.workStatus === 'active' ? 'Active' : 'Inactive'}
+                                            </span>
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 flex gap-2">
@@ -308,19 +312,19 @@ export default function StaffManagement() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="bg-dark-card border border-dark-border rounded-lg p-6 text-center">
                     <div className="text-3xl mb-2">✓</div>
-                    <div className="text-2xl font-bold text-green-400">{staff.filter(s => s.workStatus === 'active').length}</div>
+                    <div className="text-2xl font-bold text-green-400">{staff.filter((s) => s.workStatus === 'active').length}</div>
                     <p className="text-gray-400">Active Staff</p>
                 </div>
 
                 <div className="bg-dark-card border border-dark-border rounded-lg p-6 text-center">
                     <div className="text-3xl mb-2">🌴</div>
-                    <div className="text-2xl font-bold text-orange-400">{staff.filter(s => s.workStatus === 'on_leave').length}</div>
+                    <div className="text-2xl font-bold text-orange-400">{staff.filter((s) => s.workStatus === 'on_leave').length}</div>
                     <p className="text-gray-400">On Leave</p>
                 </div>
 
                 <div className="bg-dark-card border border-dark-border rounded-lg p-6 text-center">
                     <div className="text-3xl mb-2">✕</div>
-                    <div className="text-2xl font-bold text-red-400">{staff.filter(s => s.workStatus === 'inactive').length}</div>
+                    <div className="text-2xl font-bold text-red-400">{staff.filter((s) => s.workStatus === 'inactive').length}</div>
                     <p className="text-gray-400">Inactive</p>
                 </div>
             </div>
