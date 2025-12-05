@@ -126,26 +126,13 @@ export default function OrderForm() {
                             <label className="block text-white font-semibold mb-3">Delivery Method</label>
                             <div className="flex gap-6">
                                 <div className="flex items-center">
-                                    <input
-                                        type="radio"
-                                        id="delivery"
-                                        name="deliveryType"
-                                        value="delivery"
-                                        defaultChecked
-                                        className="w-4 h-4 cursor-pointer"
-                                    />
+                                    <input type="radio" id="delivery" name="deliveryType" value="delivery" defaultChecked className="w-4 h-4 cursor-pointer" />
                                     <label htmlFor="delivery" className="ml-2 text-gray-300 cursor-pointer">
                                         Delivery
                                     </label>
                                 </div>
                                 <div className="flex items-center">
-                                    <input
-                                        type="radio"
-                                        id="pickup"
-                                        name="deliveryType"
-                                        value="pickup"
-                                        className="w-4 h-4 cursor-pointer"
-                                    />
+                                    <input type="radio" id="pickup" name="deliveryType" value="pickup" className="w-4 h-4 cursor-pointer" />
                                     <label htmlFor="pickup" className="ml-2 text-gray-300 cursor-pointer">
                                         Pickup
                                     </label>
@@ -166,10 +153,7 @@ export default function OrderForm() {
                     <div className="text-5xl mb-4">✓</div>
                     <h2 className="text-2xl font-bold text-white mb-4">Order Submitted Successfully!</h2>
                     <p className="text-gray-300 mb-6">Thank you for your order. Our team will contact you shortly to confirm details.</p>
-                    <a
-                        href="/"
-                        className="inline-block px-6 py-3 bg-primary text-dark-bg font-bold rounded-lg hover:opacity-90 transition-opacity"
-                    >
+                    <a href="/" className="inline-block px-6 py-3 bg-primary text-dark-bg font-bold rounded-lg hover:opacity-90 transition-opacity">
                         Back to Home
                     </a>
                 </div>

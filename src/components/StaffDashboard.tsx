@@ -117,10 +117,7 @@ export default function StaffDashboard() {
                     <h1 className="text-3xl font-bold text-white">Staff Dashboard</h1>
                     <p className="text-gray-400">Manage orders and products</p>
                 </div>
-                <button
-                    onClick={handleLogout}
-                    className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
-                >
+                <button onClick={handleLogout} className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
                     Logout
                 </button>
             </div>
@@ -130,9 +127,7 @@ export default function StaffDashboard() {
                 <button
                     onClick={() => setActiveTab('orders')}
                     className={`px-6 py-3 font-semibold transition-colors ${
-                        activeTab === 'orders'
-                            ? 'text-primary border-b-2 border-primary'
-                            : 'text-gray-400 hover:text-white'
+                        activeTab === 'orders' ? 'text-primary border-b-2 border-primary' : 'text-gray-400 hover:text-white'
                     }`}
                 >
                     Orders ({orders.length})
@@ -140,9 +135,7 @@ export default function StaffDashboard() {
                 <button
                     onClick={() => setActiveTab('products')}
                     className={`px-6 py-3 font-semibold transition-colors ${
-                        activeTab === 'products'
-                            ? 'text-primary border-b-2 border-primary'
-                            : 'text-gray-400 hover:text-white'
+                        activeTab === 'products' ? 'text-primary border-b-2 border-primary' : 'text-gray-400 hover:text-white'
                     }`}
                 >
                     Products ({products.length})
@@ -154,9 +147,7 @@ export default function StaffDashboard() {
                 <div>
                     <h2 className="text-2xl font-bold text-white mb-6">Customer Orders</h2>
                     {orders.length === 0 ? (
-                        <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center text-gray-400">
-                            No orders yet
-                        </div>
+                        <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center text-gray-400">No orders yet</div>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full">
@@ -184,9 +175,11 @@ export default function StaffDashboard() {
                                                     value={order.status}
                                                     onChange={(e) => handleUpdateOrderStatus(order.id, e.target.value as Order['status'])}
                                                     className={`px-3 py-1 rounded text-sm font-semibold cursor-pointer border-0 ${
-                                                        order.status === 'pending' ? 'bg-yellow-900 text-yellow-200' :
-                                                        order.status === 'processing' ? 'bg-blue-900 text-blue-200' :
-                                                        'bg-green-900 text-green-200'
+                                                        order.status === 'pending'
+                                                            ? 'bg-yellow-900 text-yellow-200'
+                                                            : order.status === 'processing'
+                                                              ? 'bg-blue-900 text-blue-200'
+                                                              : 'bg-green-900 text-green-200'
                                                     }`}
                                                 >
                                                     <option value="pending">Pending</option>
@@ -231,9 +224,7 @@ export default function StaffDashboard() {
                     {/* Product Form */}
                     {showProductForm && (
                         <div className="bg-dark-card border border-dark-border rounded-lg p-6 mb-6">
-                            <h3 className="text-xl font-bold text-white mb-4">
-                                {editingProduct ? 'Edit Product' : 'Add New Product'}
-                            </h3>
+                            <h3 className="text-xl font-bold text-white mb-4">{editingProduct ? 'Edit Product' : 'Add New Product'}</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <input
                                     type="text"
@@ -287,9 +278,7 @@ export default function StaffDashboard() {
 
                     {/* Products Table */}
                     {products.length === 0 ? (
-                        <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center text-gray-400">
-                            No products yet
-                        </div>
+                        <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center text-gray-400">No products yet</div>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full">
