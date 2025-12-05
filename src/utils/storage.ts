@@ -19,6 +19,14 @@ export interface Order {
     createdAt: string;
 }
 
+export interface StaffMember {
+    id: number;
+    name: string;
+    jobRole: string;
+    phone: string;
+    workStatus: 'active' | 'inactive' | 'on_leave';
+}
+
 export interface StaffUser {
     email: string;
     password: string;
