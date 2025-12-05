@@ -118,7 +118,7 @@ export default function StaffDashboard() {
                     <p className="text-gray-400">Manage orders and products</p>
                 </div>
                 <button
-                    onClick={onLogout}
+                    onClick={handleLogout}
                     className="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
                 >
                     Logout
