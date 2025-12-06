@@ -9,6 +9,9 @@ export default defineConfig({
   vite: {
     ssr: {
       external: ['pg']
+    },
+    optimizeDeps: {
+      exclude: ['blobshape', 'tailwindcss']
     }
   }
 });
